@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html>
+<!-- -->
+<!-- OTRS: Copyright 2001-2012, OTRS AG. This Software is under the AGPL. -->
+<!-- Web: http://otrs.com/ - Lists: http://lists.otrs.org/ -->
+<!-- GNU AFFERO General Public License: http://www.gnu.org/licenses/agpl.txt -->
+<!-- -->
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <link rel="search" type="application/opensearchdescription+xml" title="OTRS 4 - Customer (Ticket#)" href="/otrs/customer.pl?Action=CustomerTicketSearch;Subaction=OpenSearchDescription" />
+    <link rel="search" type="application/opensearchdescription+xml" title="OTRS 4 - Customer (FAQ#)" href="/otrs/customer.pl?Action=CustomerFAQSearch;Subaction=OpenSearchDescriptionFAQNumber" />
+    <link rel="search" type="application/opensearchdescription+xml" title="OTRS 4 - Customer (FAQFulltext)" href="/otrs/customer.pl?Action=CustomerFAQSearch;Subaction=OpenSearchDescriptionFulltext" />
+    <link rel="shortcut icon" href="/otrs-web/skins/Agent/default/img/icons/product.ico" type="image/ico" />
+    <link rel="stylesheet" type="text/css" href="./newTicket.css" />
+    <link rel="stylesheet" type="text/css" href="/otrs-web/skins/Customer/default/css/thirdparty/ui-theme/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="/otrs-web/skins/Customer/default/css/thirdparty/jstree-theme/default/style.css" />
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <style type="text/css">
+        #Header #Logo {
+            background-image: url(http://www.appliedresearch.illinois.edu/sites/all/themes/ari/images/i-mark.png);
+            top: 10px;
+            left: 14px;
+            width: 472px;
+            height: 37px;
+            background-size: contain;
+        }
+        #Header{
+            height: 5px;
+            margin: auto 0;
+            min-width: 600px;
+            padding: 25px 30px;
+            background: #060C5C;
+            background-image: url(./OTRS_otters.png);
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+        .CompanyName{
+             padding: 0px 25px;
+        }
+        .title{
+            z-index: 999;
+            position: absolute;
+            color: white;
+            top:15px;
+            min-width: 500px;
+            font-size: 20px;
+        }
+    </style>
+    <style type="text/css">
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('/otrs-web/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.eot?v=4.1.0');
+            src: url('/otrs-web/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+            url('/otrs-web/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+            url('/otrs-web/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
+            url('/otrs-web/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.svg#fontawesomeregular?v=4.1.0') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Fix poor font rendering on chrome based browsers on windows */
+        @media all and (-webkit-min-device-pixel-ratio:0) {
+            @font-face {
+                font-family: 'FontAwesome';
+                src: url('/otrs-web/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.svg#fontawesomeregular') format('svg'),
+                url('/otrs-web/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+                url('/otrs-web/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+                url('/otrs-web/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.ttf?v=4.1.0') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+        }
+    </style>
+    <title>New Ticket - Ticket - OTRS 4</title>
+
+
+    <script type="text/javascript">//<![CDATA[
+    "use strict";
+
+    var Core = Core || {};
+    Core.App = Core.App || {};
+
+    /**
+     * @function
+     * Ignores an event. Implemented without jQuery because no external JavaScript is available yet.
+     * @return nothing
+     */
+    function IgnoreEvent (Event) {
+        if (Event.preventDefault) {
+            Event.preventDefault();
+        }
+        Event.returnValue = false;
+        return false;
+    }
+
+
+    /**
+     * @function
+     * This function unblocks all click events on the page
+     * after all JavaScript was loaded. Implemented without
+     * jQuery because no external JavaScript is available yet.
+     * @return nothing
+     */
+    Core.App.UnblockEvents = function() {
+        if (document.removeEventListener) {
+            document.removeEventListener('click', IgnoreEvent, false);
+        }
+        else {
+            document.detachEvent('onclick', IgnoreEvent);
+        }
+    };
+
+    // Now block all click events on the page to make sure that
+    // an agent does not click before all JavaScript was loaded,
+    // as event listeners are not yet available, for example.
+    Core.App.BlockEvents();
+    //]]></script>
+
+
+</head>
+<body class="NoJavaScript ">
+
+<div id="Header">
+    <h1 class="CompanyName">
+        <div id="Logo"></div>
+        <div class="title">UIUC Library Help System</div>
+    </h1>
+</div>
+
+
+
+<!-- start NavigationBar -->
+<div id="Navigation">
+    <ul>
+        <li class=" Selected">
+            <a href="/otrs/customer.pl?Action=CustomerTicketOverview;Subaction=MyTickets" accesskey="m" title="Tickets (m)" >Tickets</a>
+            <ul>
+                <li><a class="SubSelected"  onClick='window.location = "./newTicket.html";' accesskey="n" title="Create new Ticket (n)" >New Ticket</a></li>
+                <li><a class="" href="/otrs/customer.pl?Action=CustomerTicketOverview;Subaction=MyTickets" accesskey="" title="My Tickets ()" >My Tickets</a></li>
+                <li><a class="" href="/otrs/customer.pl?Action=CustomerTicketOverview;Subaction=CompanyTickets" accesskey="M" title="Company Tickets (M)" >Company Tickets</a></li>
+                <li><a class="" href="/otrs/customer.pl?Action=CustomerTicketSearch" accesskey="s" title="Search (s)" >Search</a></li>
+            </ul>
+        </li>
+        <li class=" Last">
+            <a href="/otrs/customer.pl?Action=CustomerFAQExplorer" accesskey="" title="FAQ ()" >FAQ</a>
+            <ul>
+                <li><a class="" href="/otrs/customer.pl?Action=CustomerFAQExplorer" accesskey="X" title="FAQ Explorer (X)" >FAQ Explorer</a></li>
+                <li><a class="" href="/otrs/customer.pl?Action=CustomerFAQSearch" accesskey="S" title="Search (S)" >Search</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="Individual">
+        <li class=""><a href="/otrs/customer.pl?Action=CustomerPreferences" title="Edit personal preferences">Preferences</a></li>
+        <li class="Last"><a id="LogoutButton" href="/otrs/customer.pl?Action=Logout">Logout</a></li>
+    </ul>
+</div>
+<!-- end NavigationBar -->
+
+<div class="content">
+
+    <form>
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">* To:</label>
+        <div class="col-sm-3">
+            <select name="Dest" id="Dest" class="form-control" >
+                        <option value="||-">-</option>
+                        <option value="30||ERTech">ERTech</option>
+                        <option value="6||Facilities">Facilities</option>
+                        <option value="17||IT Help Desk">IT Help Desk</option>
+                        <option value="45||Info Lit">Info Lit</option>
+                        <option value="32||MPALCAT">MPALCAT</option>
+                        <option value="33||Monographic Maintenance">Monographic Maintenance</option>
+                        <option value="34||Serials Maintenance">Serials Maintenance</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">CC:</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="CC" placeholder="email@illinois.edu">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">* Subject:</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="Subject" placeholder="-">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">* Text:</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="RichText">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Attachment:</label>
+        <div class="col-sm-7">
+          <input type="file" class="form-control" id="Attachment" placeholder="Attachment">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Severity:</label>
+        <div class="col-sm-5">
+          <select id="SeverityID" name="SeverityID" class="form-control">
+                        <option value="1" text = "1 Not Urgent At All">Not Urgent At All</option>
+                        <option value="2" text = "2 Not Urgent">Not Urgent</option>
+                        <option value="3" text = "3 normal" selected="selected">Average</option>
+                        <option value="4" text = "4 high">Pretty Urgent</option>
+                        <option value="5" text = "5 very high">Very Urgent</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Who does it effect?</label>
+        <div class="col-sm-5">
+            <select id="EffectID" name="EffectID" class="form-control">
+                <option value="1" text="so far just me">so far just me</option>
+                <option value="2" text="entire department">entire department</option>
+                <option value="3" text="class or meeting space" selected="selected">class or meeting space</option>
+                <option value="4" text="all libraries">all libraries</option>
+                <option value="5" text="patrons">patrons</option>
+            </select>        
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Inventory Number:</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="DynamicField_InventoryNumber" placeholder="eg">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Room Number:</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="DynamicField_RoomNumber" placeholder="eg">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">From:</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="DynamicField_From" placeholder="eg">
+        </div>
+      </div>
+      
+      
+      <div class="form-group row">
+        <div class="col-sm-offset-8 col-sm-4">
+          <button type="submit" class="btn btn-primary" id="submitRichText">Submit</button>
+        </div>
+      </div>
+    </form>
+</div>
+
+
+<div id="Footer" class="ARIARoleContentinfo">
+    <a href="http://www.otrs.com/" title="OTRS 4.0.4" target="_blank">Powered by OTRS 4</a>
+    <div class="Clear"></div>
+</div>
+
+
+<script type="text/javascript" src="/otrs-web/js/js-cache/CommonJS_244c1cbce4d44451e7f1861044635bf4.js"></script>
+
+
+<script type="text/javascript">//<![CDATA[
+"use strict";
+
+Core.Customer.Enhance();
+
+Core.App.Ready(function() {
+
+    Core.Config.AddConfig({
+// config
+        Baselink: '/otrs/customer.pl?',
+        CGIHandle: '/otrs/customer.pl',
+        WebPath: '/otrs-web/',
+        Action: 'CustomerTicketMessage',
+        SessionIDCookie: 'jtl82WQKBXSdGRBxeh7G7pmleoo4MDiS',
+        SessionName: 'OTRSAgentInterface',
+        SessionID: 'jtl82WQKBXSdGRBxeh7G7pmleoo4MDiS',
+        ChallengeToken: 'FxbekRUC6iYLdO2Luy65ZDxWC2uCzw1T',
+        CustomerPanelSessionName: 'OTRSCustomerInterface',
+        Images: '/otrs-web/skins/Agent/default/img/',
+        UserLanguage: 'en',
+        CheckEmailAddresses: parseInt('1', 10),
+        AnimationEnabled: parseInt('1', 10),
+        Autocomplete: Core.JSON.Parse('{"Default":{"QueryDelay":"100","ButtonText":"Search","MaxResultsDisplayed":"20","MinQueryLength":"2","AutoCompleteActive":"1"}}'),
+// translation
+        ValidateServerErrorTitle: "Error",
+        ValidateServerErrorMsg: "One or more errors occurred!",
+        DialogCloseMsg: "Close this dialog",
+        PopupBlockerMsg: "Could not open popup window. Please disable any popup blockers for this application.",
+        SearchMsg: "Search",
+        ApplyButtonText: "Apply",
+        NoElementsToSelectFromMsg: "There are currently no elements available to select from.",
+        TurnOffCompatibilityModeMsg: "Please turn off Compatibility Mode in Internet Explorer!",
+        BrowserTooOldMsg: "The browser you are using is too old.",
+        BrowserListMsg: "OTRS runs with a huge lists of browsers, please upgrade to one of these.",
+        BrowserDocumentationMsg: "Please see the documentation or ask your admin for further information."
+    });
+
+    Core.Customer.Init();
+
+
+
+});
+//]]></script>
+
+<script type="text/javascript">//<![CDATA[
+"use strict";
+Core.App.Ready(function() {
+
+    $('#Dest').bind('change', function (Event) {
+        Core.AJAX.FormUpdate($('#NewCustomerTicket'), 'AJAXUpdate', 'Dest', ['TypeID', 'PriorityID', 'ServiceID', 'SLAID', ]);
+    }); Core.Config.Set('RichText.Width', '620');
+    Core.Config.Set('RichText.Height', '320');
+    Core.Config.Set('RichText.TextDir', '');
+    Core.Config.Set('RichText.SpellChecker', '1');
+    Core.Config.Set('RichText.EditingAreaCSS', 'body { font-family:Geneva,Helvetica,Arial,sans-serif; font-size: 12px; }');
+    Core.Config.Set('RichText.Lang.SplitQuote', 'Split Quote');
+    Core.Config.Set('RichText.Toolbar', [
+        ['Bold', 'Italic', 'Underline', 'Strike', '-', 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'Link', 'Unlink', '-', 'Image', 'HorizontalRule', '-', 'Undo', 'Redo', '-', 'Find', 'SpellCheck'],
+        '/',
+        ['Format', 'Font', 'FontSize', '-', 'TextColor', 'BGColor', 'RemoveFormat', '-', 'SpecialChar', 'SplitQuote', '-', 'Maximize']
+    ]);
+    Core.Config.Set('RichText.ToolbarWithoutImage', [
+        ['Bold', 'Italic', 'Underline', 'Strike', '-', 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'Link', 'Unlink', '-', 'HorizontalRule', '-', 'Undo', 'Redo', '-', 'Find', 'SpellCheck'],
+        '/',
+        ['Format', 'Font', 'FontSize', '-', 'TextColor', 'BGColor', 'RemoveFormat', '-', 'SpecialChar', 'SplitQuote', '-', 'Maximize']
+    ]);
+    Core.Config.Set('RichText.PictureUploadAction', "");
+
+    Core.UI.RichTextEditor.InitAll(); $('#Attachment').bind('change', function (Event) {
+        var $Form = $('#Attachment').closest('form');
+        Core.Form.Validate.DisableValidation($Form);
+        $Form.find('#AttachmentUpload').val('1').end().submit();
+    }); $('#PriorityID').bind('change', function (Event) {
+        Core.AJAX.FormUpdate($('#NewCustomerTicket'), 'AJAXUpdate', 'PriorityID', [ 'TypeID', 'Dest', 'ServiceID', 'SLAID', ]);
+    }); Core.Customer.InitFocus();
+
+});
+//]]></script>
+
+<script type="text/javascript">//<![CDATA[
+"use strict";
+Core.App.Ready(function () {
+    Core.App.UnblockEvents();
+});
+//]]></script>
+
+
+
+<script>
+    var checkSuccess = false;
+
+    function checkSubmittion(){
+        //check for valid cc email
+        var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        var email_address = document.getElementById("CC").value;
+        email_address = email_address.replace(/\s/g, '');
+        var email_address_list = email_address.split(',');
+
+        for (var n = 0; n < email_address_list.length; n++) {
+            if (!re.test(email_address_list[n])){
+                alert("Please enter a valid E-mail address int the \"CC\" field.");
+                return;
+            }
+        }
+
+        var fromEmail = document.getElementById("DynamicField_From").value;
+        if (!re.test(fromEmail)){
+            alert("Please enter a valid E-mail address in the \"From\" Field.");
+            return;
+        }
+
+
+        //check for required fields
+        var flagTo = true;
+        var flagSubject = true;
+        var flagText = true;
+
+        var toField = document.getElementById("Dest");
+        var selectIndex = toField.selectedIndex;
+        if (selectIndex == 0 ){
+            flagTo = false;
+        }
+
+        var inputString = document.getElementById("Subject").value;
+        if (inputString == "" ){
+            flagSubject = false;
+        }
+
+        var TextInput = document.getElementById("RichText").value;
+        if (TextInput == "" ){
+            flagText = false;
+        }
+
+
+        var ToMssg = "";
+        var SubMssg = "";
+        var TextMssg = "";
+        if (!flagTo){
+            ToMssg = "Destination Field\n";
+        }
+        if (!flagSubject){
+            SubMssg = "Subject Field\n";
+        }
+        if (!flagText){
+            TextMssg = "Text Field\n";
+        }
+
+        if (!flagTo || !flagSubject || !flagText){
+            var ErrorMssg = "Please enter the following field: \n" + ToMssg + SubMssg + TextMssg;
+            alert(ErrorMssg);
+            return;
+        }
+        checkSuccess = true;
+    }
+
+    function makePostRequest(){
+        var to = "to";
+        var toField = document.getElementById("Dest").value;
+
+        var cc = "cc";
+        var ccField = document.getElementById("CC").value;
+
+        var subject = "subject";
+        var subjectField = document.getElementById("Subject").value;
+
+        var text = "text";
+        var textField = document.getElementById("RichText").value;
+
+        var severity = "severity";
+        var severityField = document.getElementById("SeverityID").value;
+
+        var effectRange = "effectRange";
+        var effectRangeField = document.getElementById("EffectID").value;
+
+        var inventoryNumber = "inventoryNumber";
+        var inventoryNumberField = document.getElementById("DynamicField_InventoryNumber").value;
+
+        var roomNumber = "roomNumber";
+        var roomNumberField = document.getElementById("DynamicField_RoomNumber").value;
+
+        var from = "from";
+        var fromField = document.getElementById("DynamicField_From").value;
+
+        $.ajax({
+            url: "http://minrva-dev.library.illinois.edu/api/otrs/ticket",
+            type: "POST",
+            dataType: "json",
+            data: {
+                to: toField,
+                cc: ccField,
+                subject: subjectField,
+                text: textField,
+                severity: severityField,
+                effectRange: effectRangeField,
+                inventoryNumber: inventoryNumberField,
+                roomNumber: roomNumberField,
+                from: fromField,
+            },
+            success: function (request, error) {
+                window.location = "";
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+                alert('status:' + XMLHttpRequest.status + ', status text: ' + XMLHttpRequest.statusText);
+            }
+        });
+    }
+
+    $(document).ready(function(){
+        $('#submitRichText').click(function() {
+            checkSubmittion();
+            if (checkSuccess){
+                makePostRequest();
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

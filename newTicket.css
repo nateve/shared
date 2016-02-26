@@ -1,0 +1,1362 @@
+@media screen,
+projection,
+tv,
+handheld {
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    font,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    hr {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-weight: inherit;
+        font-style: inherit;
+        font-size: 100%;
+        font-family: inherit;
+        vertical-align: baseline;
+        background-image: none;
+        direction: inherit;
+    }
+    body {
+        line-height: 1;
+        color: black;
+        background: white;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+    ol,
+    ul {
+        list-style: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    caption,
+    th,
+    td {
+        text-align: left;
+        font-weight: normal;
+    }
+    .RTL caption,
+    .RTL th,
+    .RTL td {
+        text-align: right;
+    }
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: "";
+    }
+    blockquote,
+    q {
+        quotes: "" "";
+    }
+    a {
+        text-decoration: none;
+    }
+    strong {
+        font-weight: bold;
+    }
+    select {
+        margin-top: -1px;
+    }
+}
+
+@media screen,
+projection,
+tv,
+handheld {
+    body {
+        font: 12px/14px Arial, sans-serif;
+        -webkit-text-stroke: 1px transparent;
+    }
+    .RTL {
+        text-align: right;
+        direction: rtl;
+    }
+    input {
+        font-family: Arial, sans-serif;
+    }
+    a {
+        color: #F92;
+    }
+    a:hover {
+        color: #F72;
+    }
+    p {
+        margin: 13px 0 5px;
+        color: #666;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        padding-left: 2px;
+        margin-bottom: 14px;
+        font-size: 18px;
+        font-weight: normal;
+    }
+    h4 {
+        font-weight: bold;
+    }
+    strong {
+        font-weight: bold;
+    }
+    .AsBlock {
+        display: block;
+    }
+    #Header {
+        padding: 25px 30px;
+        background: #060C5C;
+    }
+    #Header a {
+        color: white;
+        outline: none;
+    }
+    #Header #Logo {
+        position: absolute;
+        top: 6px;
+        right: 15px;
+        width: 135px;
+        height: 50px;
+        background: transparent url(../img/logo.png) no-repeat;
+    }
+    #Header button {
+        position: absolute;
+        width: 100px;
+        margin: 0;
+        top: 17px;
+        right: 21px;
+    }
+    .RTL #Header button {
+        display: none;
+    }
+    #MainBox.TicketView {
+        margin: 13px;
+        border: 1px solid #ddd;
+    }
+    .Content {
+        padding: 13px 21px;
+    }
+    .JavaScriptAvailable .Overview tbody tr,
+    .JavaScriptAvailable .MessageHeader {
+        cursor: pointer;
+    }
+    form #cke_RichText {
+        border: none;
+        box-shadow: none;
+        border: 1px solid #ccc;
+        margin: 0px 10px 3px 0px;
+        float: left;
+    }
+    form #cke_RichText span.cke_wrapper {
+        background: #E4E4E4;
+    }
+    .cke_combo__fontsize .cke_combo_text {
+        width: 40px !important;
+    }
+    #cke_RichText,
+    .cke_toolbar > .cke_toolgroup,
+    .cke_toolbar .cke_combo_button,
+    .cke_inner .cke_contents,
+    .cke_dialog_body,
+    input.cke_dialog_ui_input_password,
+    input.cke_dialog_ui_input_text,
+    textarea.cke_dialog_ui_input_textarea {
+        border-radius: 0px !important;
+    }
+    .cke_toolgroup .cke_button_on {
+        background-color: #ccc;
+    }
+    input.cke_dialog_ui_input_password:focus,
+    input.cke_dialog_ui_input_text:focus,
+    textarea.cke_dialog_ui_input_textarea:focus {
+        box-shadow: 0px 1px 2px #e8e8e8 inset, 0px 0px 3px #ccc !important;
+        border-color: #e8e8e8 !important;
+    }
+    #Footer {
+        width: 100%;
+        margin-top: 3px;
+        color: #CCC;
+        overflow: hidden;
+        text-align: center;
+    }
+    #Footer ul {
+        float: left;
+    }
+    .RTL #Footer ul {
+        float: right;
+    }
+    #Footer ul li {
+        float: left;
+        padding: 0 4px 0 0;
+    }
+    .RTL #Footer ul li {
+        float: right;
+        padding: 0 0 0 4px;
+    }
+    #Footer a {
+        margin: 8px 8px 7px;
+        color: #CCC;
+        font-size: 11px;
+    }
+    #Footer a:hover {
+        color: #F92;
+    }
+    .RTL #Footer a {
+        float: right;
+    }
+    .Clear {
+        float: none !important;
+        clear: both !important;
+    }
+    div.Clear {
+        padding: 0;
+        height: 0 !important;
+        line-height: 0;
+    }
+    .Placeholder {
+        padding: 21px;
+    }
+    .Placeholder h2 {
+        padding: 0 2px;
+        font-size: 24px;
+        line-height: 1em;
+        border-bottom: 1px dashed #BBB;
+        display: inline;
+    }
+    .Placeholder p {
+        max-width: 400px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .Hidden {
+        display: none;
+    }
+    #EmptyMessage {
+        border-bottom: 1px solid #DDD;
+    }
+    .WidgetSimple {
+        padding: 34px 34px 21px;
+        width: 600px;
+    }
+    .WidgetSimple .Error {
+        color: #FF505E;
+    }
+    .WidgetSimple h2 {
+        margin-bottom: 5px;
+    }
+    .WidgetSimple .Content {
+        padding: 13px 0;
+    }
+    .WidgetSimple textarea {
+        width: 100%;
+        height: 180px;
+    }
+    .WidgetSimple .ErrorMessage .WidgetAction {
+        display: none;
+    }
+    .DatepickerIcon {
+        margin: 1px 0 0 4px;
+        height: 16px;
+        width: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        color: #333;
+    }
+    .RTL .DatepickerIcon {
+        margin: 0 4px 0 0;
+    }
+    td.Highlight a.ui-state-default {
+        border: 1px solid #fad42e;
+        background: #ffe45c;
+        background: -moz-linear-gradient(top, #fff0a5 0%, #ffe45c 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff0a5), color-stop(100%, #ffe45c));
+        background: -webkit-linear-gradient(top, #fff0a5 0%, #ffe45c 100%);
+        background: -o-linear-gradient(top, #fff0a5 0%, #ffe45c 100%);
+        background: -ms-linear-gradient(top, #fff0a5 0%, #ffe45c 100%);
+        background: linear-gradient(to bottom, #fff0a5 0%, #ffe45c 100%);
+    }
+    .ui-datepicker-current-day {}.ui-datepicker-week-end {}.ARIAAlertMessage {
+                                                               position: absolute;
+                                                               left: -10000px;
+                                                               right: auto;
+                                                               top: -10000px;
+                                                           }
+    .RTL .ARIAAlertMessage {
+        left: auto;
+        right: -10000px;
+    }
+    form label[for] {
+        cursor: pointer;
+    }
+    form input.Error,
+    form textarea.Error {
+        border-color: #ff505e;
+    }
+    form select.Error {
+        color: #ff505e;
+    }
+    .ArticleBody {
+        font-family: monospace, fixed;
+    }
+    .ArticleChat .Name {
+        font-weight: bold;
+        white-space: nowrap;
+    }
+    .ArticleChat .Time {
+        padding-right: 5px;
+        color: #888;
+    }
+    .ArticleChat .SystemGenerated .Name {
+        display: none;
+    }
+    .ArticleChat .SystemGenerated .Text {
+        font-style: italic;
+        color: #888;
+    }
+    .ArticleChat .Own .Name {
+        color: red;
+    }
+    .ArticleChat > div {
+        display: table;
+    }
+    .ArticleChat > div > div {
+        display: table-row;
+    }
+    .ArticleChat > div > div > span {
+        display: table-cell;
+    }
+    .ChatTooltip {
+        background: #B83850;
+        color: #fff;
+        left: 50%;
+        margin-left: -80px;
+        padding: 10px;
+        position: absolute;
+        text-align: center;
+        top: 39px;
+        width: 140px;
+        z-index: 900;
+        display: none;
+    }
+    .ChatTooltip:after {
+        bottom: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(184, 56, 80, 0);
+        border-bottom-color: #B83850;
+        border-width: 10px;
+        margin-left: -10px;
+    }
+}
+
+
+button,
+.Button,
+.cke_dialog_footer_buttons a.cke_dialog_ui_button {
+    padding: 4px 11px !important;
+    color: #333;
+    font-size: 12px;
+    background: #eee;
+    border: 1px solid #ccc;
+    display: inline-block;
+    cursor: pointer;
+}
+.cke_dialog_footer_buttons a.cke_dialog_ui_button {
+    font-weight: bold !important;
+}
+.cke_dialog_footer_buttons a.cke_dialog_ui_button:hover {
+    background-color: #e5e5e5;
+    border-color: #999;
+}
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+button:hover,
+.Button:hover,
+button:active,
+.Button:active {
+    border-color: #888;
+    color: #333;
+}
+.SmallButton {
+    padding: 0 8px;
+    margin: 0 2px;
+    color: #797979;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: bold;
+    background: darkblue;
+    background: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+    background: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #eeeeee 100%);
+    border: 1px solid #DDD;
+    border-bottom: 1px solid #CCC;
+    text-shadow: 0 1px 0 #FFF;
+}
+.SmallButton:hover {
+    color: #555;
+}
+.SmallButton:active {
+    background: #EEE;
+    background: -moz-linear-gradient(top, #cccccc 0%, #eeeeee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cccccc), color-stop(100%, #eeeeee));
+    background: -webkit-linear-gradient(top, #cccccc 0%, #eeeeee 100%);
+    background: -o-linear-gradient(top, #cccccc 0%, #eeeeee 100%);
+    background: -ms-linear-gradient(top, #cccccc 0%, #eeeeee 100%);
+    background: linear-gradient(to bottom, #cccccc 0%, #eeeeee 100%);
+    border-color: #CCC #CCC #D9D9D9;
+    text-shadow: 0 1px 0 #EEE;
+}
+
+@media screen,
+projection,
+tv,
+handheld {
+    div.TooltipContainer {
+        position: absolute;
+        z-index: 4000;
+        display: none;
+    }
+    div.Tooltip {
+        width: 244px;
+    }
+    div.Tooltip.TongueLeft {
+        margin-left: -37px;
+    }
+    div.Tooltip.TongueRight {
+        margin-left: -202px;
+    }
+    div.Tooltip > div.Content {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 5px;
+        margin-top: 15px;
+        position: relative;
+    }
+    div.Tooltip > div.Content p {
+        margin: 0px;
+        color: #000;
+    }
+    div.Tooltip > div.Content:after,
+    div.Tooltip > div.Content:before {
+        bottom: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    div.Tooltip.TongueLeft > div.Content:after,
+    div.Tooltip.TongueLeft > div.Content:before {
+        left: 10%;
+    }
+    div.Tooltip.TongueRight > div.Content:after,
+    div.Tooltip.TongueRight > div.Content:before {
+        left: 90%;
+        right: 10%;
+    }
+    div.Tooltip > div.Content:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-bottom-color: #fff;
+        border-width: 6px;
+        margin-left: -6px;
+    }
+    div.Tooltip > div.Content:before {
+        border-color: rgba(204, 204, 204, 0);
+        border-bottom-color: #ccc;
+        border-width: 7px;
+        margin-left: -7px;
+    }
+}
+
+@media screen,
+projection,
+tv,
+handheld {
+    .Login {
+        padding: 34px 0;
+    }
+    .Login p {
+        padding: 0;
+    }
+    .Login noscript p {
+        color: #666666;
+        margin: 13px 0 26px;
+    }
+    #Slider {
+        margin-bottom: 34px;
+        width: 642px;
+        height: 260px;
+        overflow: hidden;
+    }
+    #Login,
+    #Reset,
+    #Signup,
+    #PreLogin {
+        width: 500px;
+        height: 260px;
+        padding-left: 142px;
+        position: relative;
+    }
+    #NoJavaScript,
+    #OldBrowser {
+        width: 500px;
+        padding-left: 142px;
+        position: relative;
+    }
+    .RTL #Login,
+    .RTL #Reset,
+    .RTL #Signup,
+    .RTL #PreLogin {
+        padding: 0 142px 0 0;
+        float: right;
+    }
+    .InlineNavigation {
+        top: 1px;
+        left: 34px;
+        position: absolute;
+    }
+    .RTL .InlineNavigation {
+        left: auto;
+        right: 34px;
+    }
+    .Login label {
+        width: auto;
+        padding-left: 2px;
+        float: none;
+        color: #222;
+        font-size: 12px;
+        text-align: left;
+    }
+    .Login form label.Focused {
+        color: #BBB;
+    }
+    .Login input[type='text'],
+    .Login input[type='email'],
+    .Login input[type='password'] {
+        width: 177px;
+        padding: 3px 5px;
+        font-size: 14px;
+        background-color: transparent;
+        display: block;
+    }
+    .Login input:focused {
+        border-color: #F92;
+    }
+    .Login button {
+        margin-top: 13px;
+        min-width: 70px;
+    }
+    .Login button:disabled {
+        color: #7F7F7F;
+        background: #F0F0F0
+    }
+    .Floating div {
+        margin: 2px 5px 2px 0;
+        position: relative;
+        float: left;
+    }
+    .RTL .Floating div {
+        margin: 2px 0 2px 5px;
+    }
+    .Floating button {
+        margin-top: 17px;
+    }
+    .JavaScriptAvailable .Floating button {
+        margin-top: 0;
+        padding: 4px 0;
+    }
+    .JavaScriptAvailable .Login label,
+    .JavaScriptAvailable .Login label.Mandatory {
+        margin: 1px 5px;
+        color: #999 !important;
+        font-size: 14px;
+        line-height: 14px;
+        position: absolute;
+        z-index: 1;
+        max-width: 177px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .JavaScriptAvailable .Login input[type='text'],
+    .JavaScriptAvailable .Login input[type='password'] {
+        margin: 0;
+        position: relative;
+        z-index: 10;
+    }
+    .Option {
+        margin: 0;
+        padding: 0 2px 3px;
+        line-height: 21px;
+        float: none;
+    }
+    #Signup #Title {
+        width: 55px;
+    }
+    #Signup input[type='text'],
+    #Signup input[type='email'] {
+        width: 250px;
+    }
+    .NewLine {
+        clear: left;
+    }
+    .JavaScriptAvailable .Floating .NewLine button {
+        margin-top: 8px;
+    }
+    .ErrorBox,
+    .SuccessBox,
+    .WarningBox {
+        display: block;
+        margin: -13px 136px 20px;
+        padding: 5px 8px 4px;
+        cursor: default;
+    }
+    .ErrorBox {
+        color: #FFF;
+        background: #D41111;
+    }
+    .WarningBox {
+        color: #555;
+        background: #FFDD50;
+    }
+    .WarningBox.WithIcon {
+        position: relative;
+        padding-left: 25px;
+    }
+    .WarningBox.WithIcon > i {
+        position: absolute;
+        left: 10px;
+        top: 6px;
+    }
+    .SuccessBox {
+        color: #FFF;
+        background: #08A503;
+    }
+    .Login .Content {
+        margin-left: 142px;
+        border-top: none;
+    }
+    .RTL .Login .Content {
+        margin-right: 142px;
+        margin-left: 0;
+    }
+}
+
+
+@media screen,
+projection,
+tv,
+handheld {
+    #Navigation {
+        height: 25px;
+        width: 100%;
+        position: relative;
+        background: #ddd;
+        clear: both;
+    }
+    #Navigation > ul {
+        float: left;
+    }
+    .RTL #Navigation > ul {
+        float: right;
+    }
+    #Navigation > ul > li > ul {
+        position: absolute;
+        top: 25px;
+        left: 0px;
+        display: none;
+        border-top: 0px;
+    }
+    .RTL #Navigation > ul > li > ul {
+        right: 1px;
+    }
+    #Navigation > ul > li:hover ul,
+    #Navigation > ul > li a:focus + ul,
+    #Navigation > ul > li ul.Expanded {
+        display: block;
+        z-index: 1000;
+    }
+    #Navigation .Individual {
+        float: right;
+    }
+    .RTL #Navigation .Individual {
+        float: left;
+    }
+    #Navigation > ul > li {
+        float: left;
+        position: relative;
+        border-right: 1px solid #bbb;
+    }
+
+
+
+
+
+    #Navigation > ul > li.Last {
+        border-right: 0px;
+    }
+    .RTL #Navigation > ul > li {
+        float: right;
+        margin: -1px -2px 0 0;
+    }
+    #Navigation > ul > li > a {
+        color: #111;
+        font-size: 11px;
+        display: block;
+        outline: none;
+        padding: 6px 10px 5px 11px;
+    }
+    #Navigation > ul > li.Selected > a:after {
+        content: "";
+    }
+    #Navigation > ul > li:last-child > a:after {
+        display: none;
+    }
+    #Navigation > ul > li > ul a {
+        color: #222;
+        font-size: 11px;
+        padding: 4px 15px 4px 6px;
+        white-space: nowrap;
+        display: block;
+        background-color: #C4C6C6;
+        border-top: 1px solid #aaa;
+    }
+    #Navigation > ul > li > ul li:last-child {
+        border-bottom: 1px solid #aaa;
+    }
+    #Navigation > ul > li > ul a:hover,
+    #Navigation > ul > li > ul a:focus,
+    #Navigation > ul > li > ul a.SubSelected {
+        background-color: #ddd;
+    }
+    .RTL #Navigation li:first-child a,
+    #Navigation .Last a {
+        background-image: none;
+    }
+    #Navigation li:active {
+        background: #949494;
+    }
+    #Navigation .Selected + li {
+        margin-left: -1px;
+    }
+    #Navigation .Selected + li a {
+        padding-left: 10px;
+    }
+    #Navigation .Selected,
+    #Navigation .Selected:active,
+    #Navigation > ul > li:hover {
+        background: #343435;
+    }
+    #Navigation .Selected > a,
+    #Navigation > ul > li:hover > a {
+        color: #FFF;
+        background: none;
+    }
+    
+}
+
+@media screen,
+projection,
+tv,
+handheld {
+    .TicketView .Content {
+        padding: 0;
+    }
+    table.Overview {
+        width: 100%;
+        color: #444;
+        text-shadow: 0 1px 0 #FFF;
+        zoom: 1;
+        clear: both;
+        position: relative;
+    }
+    .Overview thead {
+        background: #ccc;
+        display: none;
+    }
+    .Sortable thead {
+        display: table-header-group;
+    }
+    .Overview thead th {
+        padding: 0;
+        vertical-align: bottom;
+        border-right: 1px solid #999;
+        border-bottom: 1px solid #999;
+    }
+    .RTL .Overview thead th {
+        border-right: none;
+        border-left: 1px solid #666;
+    }
+    .Overview thead .Status {
+        padding-left: 0;
+    }
+    .Overview thead a {
+        padding: 1px 13px 4px 8px;
+        height: 10px;
+        color: #444;
+        font-size: 11px;
+        text-transform: uppercase;
+        display: block;
+        text-shadow: 0 1px 0 #EEE;
+        position: relative;
+        white-space: nowrap;
+    }
+    .Overview thead span {
+        padding: 1px 13px 4px 8px;
+        height: 10px;
+        color: #444;
+        font-size: 11px;
+        text-transform: uppercase;
+        display: block;
+        text-shadow: 0 1px 0 #EEE;
+    }
+    .Overview thead .SortAscending a,
+    .Overview thead .SortDescending a {
+        color: #222;
+        font-weight: 600;
+        text-align: left;
+        background: #aaa;
+        text-shadow: 0 1px 0 #BBB;
+        padding-right: 20px;
+    }
+    .Overview thead .SortDescending a {
+        background: #aaa;
+    }
+    .Overview thead .SortDescending a:after {
+        content: "\25BC";
+        display: block;
+        position: absolute;
+        right: 2px;
+        top: 0px;
+    }
+    .Overview thead .SortAscending a:after {
+        content: "\25B2";
+        display: block;
+        position: absolute;
+        right: 2px;
+        top: 0px;
+    }
+    .Overview tbody {
+        background-color: transparent;
+    }
+    .Overview tbody tr {
+        border-bottom: 1px solid #FFF;
+    }
+    .Overview tbody tr:active {
+        background-color: #DDD;
+    }
+    .Overview tbody tr:first-child {
+        border-top: none;
+    }
+    .Overview tbody td {
+        padding: 6px 8px 3px;
+        white-space: nowrap;
+        border: 0px solid;
+    }
+    .Overview tbody a {
+        color: #444;
+        text-decoration: none;
+        outline: none;
+    }
+    .Overview table a:hover {
+        color: #000;
+    }
+    .Overview tbody tr td {
+        background-color: #FBFBFB;
+    }
+    .Overview tbody tr.Even td {
+        background-color: #F2F2F2;
+    }
+    .Overview tbody tr:nth-child(even) td {
+        background-color: #F2F2F2;
+    }
+    .State {
+        padding-left: 8px;
+    }
+    .Title div {
+        height: 14px;
+        color: #777;
+        overflow: hidden;
+        white-space: normal;
+    }
+    .Title h2 {
+        margin-bottom: 0;
+        font-size: 12px;
+        font-weight: bold;
+        color: #444;
+        display: inline;
+    }
+    .Age {
+        padding-right: 8px;
+        text-align: right;
+    }
+    .Overview thead th.Age {
+        border-right: none;
+        border-left: none;
+        text-align: left;
+    }
+    .RTL .Overview thead th.Age {
+        text-align: right;
+    }
+    .Overview tbody tr:hover td {
+        background: #FCB24B;
+    }
+    .Overview tbody tr:hover {
+        border-color: #CCC;
+    }
+    .Overview tbody tr:hover td,
+    .Overview tbody tr:hover a {
+        color: #452A03;
+        text-shadow: 0 1px 0 #F4B259;
+    }
+    .Overview tbody tr:hover .Title div {
+        color: #724807;
+        text-shadow: 0 1px 0 #F4B259;
+    }
+    .Overview tbody tr:active td {
+        padding: 7px 8px 2px;
+        background-position: bottom;
+    }
+}
+@media screen,
+projection,
+tv,
+handheld {
+    .TicketZoom .Content {
+        padding: 8px 10px 0;
+    }
+    .TicketHeader {
+        width: 80%;
+        overflow: hidden;
+        position: relative;
+    }
+    .TicketHeader h2 {
+        margin: 3px 0 0;
+        padding: 10px 0px 15px 36px;
+        font-size: 24px;
+        line-height: 24px;
+        position: relative;
+        float: left;
+    }
+    .RTL .TicketHeader h2 {
+        padding: 10px 36px 15px 0px;
+        float: right;
+    }
+    .Flag span.PriorityID-1 {
+        background-color: #03c4f0;
+    }
+    .Flag span.PriorityID-2 {
+        background-color: #83bfc8;
+    }
+    .Flag span.PriorityID-3 {
+        background-color: #cdcdcd;
+    }
+    .Flag span.PriorityID-4 {
+        background-color: #ffaaaa;
+    }
+    .Flag span.PriorityID-5 {
+        background-color: #ff505e;
+    }
+    .Flag {
+        top: 15px;
+        left: 6px;
+        width: 21px;
+        height: 16px;
+        line-height: 16px;
+        text-indent: -9999px;
+        position: absolute;
+        display: block;
+    }
+    .RTL .Flag {
+        left: auto;
+        right: 6px;
+    }
+    .Flag span {
+        height: 15px;
+        line-height: 15px;
+        border: 1px solid transparent;
+        border-bottom: none;
+        display: block;
+    }
+    #ZoomSidebar {
+        float: right;
+        width: 18%;
+    }
+    #Metadata,
+    #Activities {
+        line-height: 20px;
+        float: right;
+        margin-right: 5px;
+        width: 100%;
+        padding: 0px 0px 7px 0px;
+        border: 1px solid #E9E9E9;
+        border-bottom: 1px solid #DDD;
+    }
+    #Activities {
+        margin-top: 20px;
+        padding: 0px;
+    }
+    #Activities li {
+        padding: 3px 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    #Activities li:last-child {
+        border-bottom: 0px;
+    }
+    .RTL #Metadata {
+        float: left;
+    }
+    #Metadata li {
+        padding: 2px 10px;
+    }
+    #Metadata li.Header {
+        padding: 0px;
+        margin-bottom: 7px;
+    }
+    #Activities li.Header {
+        padding: 0px;
+    }
+    #Metadata li.Header div.MessageHeader,
+    #Activities li.Header div.MessageHeader {
+        padding: 2px 10px 1px 10px;
+    }
+    #Metadata li .Key {
+        color: #666;
+    }
+    #TicketOptions {
+        position: absolute;
+        right: 0px;
+        top: 20px;
+        overflow: hidden;
+    }
+    #TicketOptions li {
+        float: left;
+        margin-left: 5px;
+    }
+    #TicketOptions .Print,
+    #TicketOptions .ZoomExpand {
+        color: #777;
+        font-size: 15px;
+    }
+    #TicketOptions .Print:hover,
+    #TicketOptions .ZoomExpand:hover {
+        color: #f92;
+    }
+    #TicketOptions .Print span,
+    #TicketOptions .ZoomExpand span {
+        text-indent: -9999px;
+        display: block;
+    }
+    #TicketOptions .ZoomExpand.ExpandAll .fa-minus {
+        display: none;
+    }
+    #TicketOptions .ZoomExpand.ExpandOne .fa-bars {
+        display: none;
+    }
+    .RTL #TicketOptions .ZoomExpandAll {
+        margin: -2px 4px 0 0;
+    }
+    .TicketZoom .Age {
+        width: auto;
+        padding: 0;
+    }
+    #Messages {
+        border: 1px solid #E9E9E9;
+        border-bottom: 1px solid #DDD;
+        position: relative;
+        z-index: 10;
+        width: 80%;
+        float: left;
+    }
+    #Messages li {
+        position: relative;
+    }
+    #Messages li:last-child .MessageHeader,
+    #Messages li.Visible:last-child .MessageContent {
+        border-width: 0;
+    }
+    #Messages li.Visible:last-child .MessageHeader {
+        border-width: 1px;
+    }
+    .MessageHeader {
+        padding: 5px 8px 3px;
+        color: #6A6A6A;
+        background-color: #eee;
+        border-bottom: 1px solid #D6D6D6;
+        position: relative;
+    }
+    .Visible .MessageHeader,
+    .Visible .MessageHeader a {
+        color: #222;
+    }
+    .MessageHeader a {
+        color: #6A6A6A;
+    }
+    .MessageHeader h3 {
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 90%;
+    }
+    .RTL .MessageHeader h3 {
+        padding-left: 100px;
+    }
+    .MessageHeader h3 span {
+        font-weight: normal;
+    }
+    .MessageHeader .Age {
+        position: absolute;
+        top: 5px;
+        right: 8px;
+    }
+    .RTL .MessageHeader .Age {
+        left: 8px;
+    }
+    .MessageBody {
+        height: 0;
+        overflow: hidden;
+    }
+    #Messages li.Visible .MessageBody {
+        height: auto;
+    }
+    #NoArticles {
+        border: 1px solid #E9E9E9;
+        border-bottom: 1px solid #DDD;
+        position: relative;
+        z-index: 10;
+        width: 80%;
+        float: left;
+    }
+    #NoArticles li {
+        line-height: 30px;
+        padding: 2px 10px;
+        border-top: 1px solid #FFF;
+        position: relative;
+    }
+    .SeperatorRow {
+        border-top: 1px solid #FFF;
+        border-bottom: 1px solid #E8E8E8;
+        background: #FCFCFC;
+    }
+    .Details {
+        padding: 4px 13px;
+        font-size: 11px;
+        color: #525252;
+        line-height: 16px;
+    }
+    .Details > div {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .Details .Label {
+        width: 65px;
+        margin: 0 3px;
+        color: #AAA;
+        float: left;
+        text-align: right;
+    }
+    .RTL .Details .Label {
+        text-align: left;
+    }
+    .Details .Attachments {
+        padding-top: 2px;
+    }
+    .Details .Attachments .Label {
+        text-indent: -9999px;
+        text-align: left;
+    }
+    .RTL .Details .Attachments .Label {
+        text-indent: -9999px;
+        text-align: right;
+    }
+    .Details .Attachments div {
+        display: inline;
+        white-space: normal;
+    }
+    .Details .Attachments span {
+        margin-right: 12px;
+    }
+    .RTL .Details .Attachments span {
+        margin-right: 0;
+        margin-left: 12px;
+    }
+    .DownloadAttachment a {
+        color: #000;
+    }
+    .MessageContent {
+        padding: 13px 8px;
+        background: #FFF;
+        border-bottom: 1px solid #E9E9E9;
+    }
+    .TicketZoom iframe {
+        width: 100%;
+        border: none;
+    }
+    #FollowUp {
+        margin: 0 13px 8px;
+        color: #6A6A6A;
+        background: #eee;
+        border-left: 1px solid #D6D6D6;
+        border-right: 1px solid #D6D6D6;
+        position: relative;
+        width: 77%;
+        float: left;
+    }
+    #FollowUp.Visible {
+        border-bottom: 1px solid #D6D6D6;
+    }
+    .JavaScriptAvailable #FollowUp {
+        margin-bottom: 30px;
+    }
+    .JavaScriptAvailable #FollowUp #Messenger {
+        height: 0;
+        overflow: hidden;
+    }
+    #FollowUp.Visible #Messenger {
+        height: auto;
+        border-top: 1px solid #EEE;
+    }
+    #Messenger #Subject {
+        width: 300px;
+        color: #444;
+        background: transparent;
+    }
+    #Messenger textarea {
+        display: block;
+    }
+    #Messenger textarea:focus {
+        border-color: #888;
+    }
+    #Messenger fieldset {
+        margin: 8px 7px 10px;
+        border-color: #D6D6D6;
+    }
+    .RTL .Attachment {
+        padding: 9px 138px 4px 0;
+    }
+    #Messenger .ActionRow {
+        margin: 0 -1px -1px;
+        padding: 8px 13px;
+        background-position: -30px;
+        border: 1px solid #B8BBBB;
+        text-shadow: none;
+    }
+    #ReplyButton {
+        bottom: -22px;
+        height: 10px;
+        margin: 0 13px;
+        padding: 4px 8px 7px 8px;
+        color: #999;
+        background: #F0F0F0 no-repeat 6px 6px;
+        border: 1px solid #D6D6D6;
+        border-top: none;
+        display: none;
+        position: absolute;
+        -webkit-box-shadow: 0 0 3px #F6F9F9;
+        box-shadow: 0 0 2px #F6F9F9;
+    }
+    .JavaScriptAvailable #ReplyButton {
+        display: block;
+    }
+    #ReplyButton:hover {
+        color: #555;
+    }
+    .Visible #ReplyButton {
+        display: none;
+    }
+    .agent {}
+}
+
+
+.content{
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    width: 80%;
+}
+
+#RichText{
+    height: 300px;
+}
+
+.form-control-label{
+    text-align: right;
+}
+
+
